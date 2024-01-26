@@ -86,6 +86,8 @@ def insert(root, key):
         
     return root
 
+
+# Task 1
 # Найбільше значення знаходиться в крайньому правому вузлі
 
 def find_max_value(node):
@@ -96,6 +98,7 @@ def find_max_value(node):
     return current.key
 
 
+# Task 2
 # Найменьше значення знаходиться в крайньому лівому вузлі
 
 def find_min_value(node):
@@ -104,6 +107,15 @@ def find_min_value(node):
         current = current.left
     
     return current.key
+
+
+# Task 3
+
+def sum_of_values(node):
+    if node is None:
+        return 0
+    return node.key + sum_of_values(node.left) + sum_of_values(node.right)
+
 
 
 # Driver program to test the above functions
@@ -122,3 +134,6 @@ print("Найбільше значення в AVL-дереві:", max_value)
 
 min_value = find_min_value(root)
 print("Найменше значення в AVL-дереві:", min_value)
+
+total_sum = sum_of_values(root)
+print("Сума всіх значень у AVL-дереві:", total_sum)
